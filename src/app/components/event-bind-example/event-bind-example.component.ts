@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './event-bind-example.component.html',
   styleUrl: './event-bind-example.component.css'
 })
+
 export class EventBindExampleComponent {
   times: number = 0;
-  userImput: string = '';
+  userInput: string = '';
 
   incrementTimes(){
-    // this.times = this.times + 1;
+    // this.times = this.times + 1
     this.times++;
   }
 
@@ -21,6 +22,11 @@ export class EventBindExampleComponent {
   }
 
   reset(){
-    this.times = 0; 
+    this.times = 0;
   }
+
+  onUserInput(event: Event){
+    this.userInput = (<HTMLInputElement>event.target).value;
+  }
+
 }
